@@ -34,3 +34,7 @@ build/
 
 # Config
 src/main/resources/application.properties
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
