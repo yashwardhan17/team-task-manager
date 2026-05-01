@@ -39,12 +39,7 @@ public class ProjectService {
     }
 
     public List<Project> getUserProjects(User currentUser) {
-        List<Project> owned = projectRepository.findByOwner(currentUser);
-        List<Project> member = projectRepository.findProjectsByMember(currentUser);
-
-        return java.util.stream.Stream.concat(owned.stream(), member.stream())
-                .distinct()
-                .collect(Collectors.toList());
+        return projectRepository.findProjectsByMember(currentUser);
     }
 
     public Project getProject(Long id, User currentUser) {
